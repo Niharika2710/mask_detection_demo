@@ -1,0 +1,68 @@
+{
+  "buildFiles": [
+    "C:\\Users\\niharika3.sharma\\Documents\\Paddle-Lite-Demo-master\\PaddleLite-android-demo\\mask_detection_demo\\app\\OpenCV\\sdk\\native\\jni\\OpenCVConfig-version.cmake",
+    "C:\\Users\\niharika3.sharma\\Documents\\Paddle-Lite-Demo-master\\PaddleLite-android-demo\\mask_detection_demo\\app\\OpenCV\\sdk\\native\\jni\\abi-arm64-v8a\\OpenCVModules.cmake",
+    "C:\\Users\\niharika3.sharma\\Documents\\Paddle-Lite-Demo-master\\PaddleLite-android-demo\\mask_detection_demo\\app\\OpenCV\\sdk\\native\\jni\\abi-arm64-v8a\\OpenCVConfig.cmake",
+    "C:\\Users\\niharika3.sharma\\Documents\\Paddle-Lite-Demo-master\\PaddleLite-android-demo\\mask_detection_demo\\app\\OpenCV\\sdk\\native\\jni\\abi-arm64-v8a\\OpenCVModules-release.cmake",
+    "C:\\Users\\niharika3.sharma\\Documents\\Paddle-Lite-Demo-master\\PaddleLite-android-demo\\mask_detection_demo\\app\\OpenCV\\sdk\\native\\jni\\OpenCVConfig.cmake",
+    "C:\\Users\\niharika3.sharma\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\build\\cmake\\android.toolchain.cmake",
+    "C:\\Users\\niharika3.sharma\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669\\build\\cmake\\platforms.cmake",
+    "C:\\Users\\niharika3.sharma\\Downloads\\firebase_cpp_sdk\\CMakeLists.txt",
+    "C:\\Users\\niharika3.sharma\\Documents\\Paddle-Lite-Demo-master\\PaddleLite-android-demo\\mask_detection_demo\\app\\src\\main\\cpp\\CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "C:\\Users\\niharika3.sharma\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"C:\\Users\\niharika3.sharma\\Documents\\Paddle-Lite-Demo-master\\PaddleLite-android-demo\\mask_detection_demo\\app\\.cxx\\cmake\\release\\arm64-v8a\" clean"
+  ],
+  "buildTargetsCommand": "C:\\Users\\niharika3.sharma\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe  -C \"C:\\Users\\niharika3.sharma\\Documents\\Paddle-Lite-Demo-master\\PaddleLite-android-demo\\mask_detection_demo\\app\\.cxx\\cmake\\release\\arm64-v8a\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "Native-Release-arm64-v8a": {
+      "artifactName": "Native",
+      "buildCommand": "C:\\Users\\niharika3.sharma\\AppData\\Local\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"C:\\Users\\niharika3.sharma\\Documents\\Paddle-Lite-Demo-master\\PaddleLite-android-demo\\mask_detection_demo\\app\\.cxx\\cmake\\release\\arm64-v8a\" Native",
+      "abi": "arm64-v8a",
+      "output": "C:\\Users\\niharika3.sharma\\Documents\\Paddle-Lite-Demo-master\\PaddleLite-android-demo\\mask_detection_demo\\app\\build\\intermediates\\cmake\\release\\obj\\arm64-v8a\\libNative.so",
+      "runtimeFiles": [
+        "C:\\Users\\niharika3.sharma\\Documents\\Paddle-Lite-Demo-master\\PaddleLite-android-demo\\mask_detection_demo\\app\\src\\main\\cpp\\..\\..\\..\\PaddleLite\\cxx\\libs\\arm64-v8a\\libpaddle_light_api_shared.so",
+        "C:\\Users\\niharika3.sharma\\Documents\\Paddle-Lite-Demo-master\\PaddleLite-android-demo\\mask_detection_demo\\app\\OpenCV\\sdk\\native\\staticlibs\\arm64-v8a\\libopencv_calib3d.a",
+        "C:\\Users\\niharika3.sharma\\Documents\\Paddle-Lite-Demo-master\\PaddleLite-android-demo\\mask_detection_demo\\app\\OpenCV\\sdk\\native\\staticlibs\\arm64-v8a\\libopencv_core.a",
+        "C:\\Users\\niharika3.sharma\\Documents\\Paddle-Lite-Demo-master\\PaddleLite-android-demo\\mask_detection_demo\\app\\OpenCV\\sdk\\native\\staticlibs\\arm64-v8a\\libopencv_dnn.a",
+        "C:\\Users\\niharika3.sharma\\Documents\\Paddle-Lite-Demo-master\\PaddleLite-android-demo\\mask_detection_demo\\app\\OpenCV\\sdk\\native\\staticlibs\\arm64-v8a\\libopencv_features2d.a",
+        "C:\\Users\\niharika3.sharma\\Documents\\Paddle-Lite-Demo-master\\PaddleLite-android-demo\\mask_detection_demo\\app\\OpenCV\\sdk\\native\\staticlibs\\arm64-v8a\\libopencv_flann.a",
+        "C:\\Users\\niharika3.sharma\\Documents\\Paddle-Lite-Demo-master\\PaddleLite-android-demo\\mask_detection_demo\\app\\OpenCV\\sdk\\native\\staticlibs\\arm64-v8a\\libopencv_highgui.a",
+        "C:\\Users\\niharika3.sharma\\Documents\\Paddle-Lite-Demo-master\\PaddleLite-android-demo\\mask_detection_demo\\app\\OpenCV\\sdk\\native\\staticlibs\\arm64-v8a\\libopencv_imgcodecs.a",
+        "C:\\Users\\niharika3.sharma\\Documents\\Paddle-Lite-Demo-master\\PaddleLite-android-demo\\mask_detection_demo\\app\\OpenCV\\sdk\\native\\staticlibs\\arm64-v8a\\libopencv_imgproc.a",
+        "C:\\Users\\niharika3.sharma\\Documents\\Paddle-Lite-Demo-master\\PaddleLite-android-demo\\mask_detection_demo\\app\\OpenCV\\sdk\\native\\staticlibs\\arm64-v8a\\libopencv_ml.a",
+        "C:\\Users\\niharika3.sharma\\Documents\\Paddle-Lite-Demo-master\\PaddleLite-android-demo\\mask_detection_demo\\app\\OpenCV\\sdk\\native\\staticlibs\\arm64-v8a\\libopencv_objdetect.a",
+        "C:\\Users\\niharika3.sharma\\Documents\\Paddle-Lite-Demo-master\\PaddleLite-android-demo\\mask_detection_demo\\app\\OpenCV\\sdk\\native\\staticlibs\\arm64-v8a\\libopencv_photo.a",
+        "C:\\Users\\niharika3.sharma\\Documents\\Paddle-Lite-Demo-master\\PaddleLite-android-demo\\mask_detection_demo\\app\\OpenCV\\sdk\\native\\staticlibs\\arm64-v8a\\libopencv_stitching.a",
+        "C:\\Users\\niharika3.sharma\\Documents\\Paddle-Lite-Demo-master\\PaddleLite-android-demo\\mask_detection_demo\\app\\OpenCV\\sdk\\native\\staticlibs\\arm64-v8a\\libopencv_video.a",
+        "C:\\Users\\niharika3.sharma\\Documents\\Paddle-Lite-Demo-master\\PaddleLite-android-demo\\mask_detection_demo\\app\\OpenCV\\sdk\\native\\staticlibs\\arm64-v8a\\libopencv_videoio.a",
+        "C:\\Users\\niharika3.sharma\\Documents\\Paddle-Lite-Demo-master\\PaddleLite-android-demo\\mask_detection_demo\\app\\src\\main\\cpp\\..\\..\\..\\PaddleLite\\cxx\\libs\\arm64-v8a\\libhiai.so",
+        "C:\\Users\\niharika3.sharma\\Documents\\Paddle-Lite-Demo-master\\PaddleLite-android-demo\\mask_detection_demo\\app\\src\\main\\cpp\\..\\..\\..\\PaddleLite\\cxx\\libs\\arm64-v8a\\libhiai_ir.so",
+        "C:\\Users\\niharika3.sharma\\Documents\\Paddle-Lite-Demo-master\\PaddleLite-android-demo\\mask_detection_demo\\app\\src\\main\\cpp\\..\\..\\..\\PaddleLite\\cxx\\libs\\arm64-v8a\\libhiai_ir_build.so",
+        "C:\\Users\\niharika3.sharma\\Downloads\\firebase_cpp_sdk\\libs\\android\\arm64-v8a\\c++\\libfirebase_auth.a",
+        "C:\\Users\\niharika3.sharma\\Downloads\\firebase_cpp_sdk\\libs\\android\\arm64-v8a\\c++\\libfirebase_database.a",
+        "C:\\Users\\niharika3.sharma\\Downloads\\firebase_cpp_sdk\\libs\\android\\arm64-v8a\\c++\\libfirebase_firestore.a",
+        "C:\\Users\\niharika3.sharma\\Downloads\\firebase_cpp_sdk\\libs\\android\\arm64-v8a\\c++\\libfirebase_storage.a",
+        "C:\\Users\\niharika3.sharma\\Downloads\\firebase_cpp_sdk\\libs\\android\\arm64-v8a\\c++\\libfirebase_app.a",
+        "C:\\Users\\niharika3.sharma\\Documents\\Paddle-Lite-Demo-master\\PaddleLite-android-demo\\mask_detection_demo\\app\\OpenCV\\sdk\\native\\3rdparty\\libs\\arm64-v8a\\liblibprotobuf.a",
+        "C:\\Users\\niharika3.sharma\\Documents\\Paddle-Lite-Demo-master\\PaddleLite-android-demo\\mask_detection_demo\\app\\OpenCV\\sdk\\native\\staticlibs\\arm64-v8a\\libopencv_imgcodecs.a",
+        "C:\\Users\\niharika3.sharma\\Documents\\Paddle-Lite-Demo-master\\PaddleLite-android-demo\\mask_detection_demo\\app\\OpenCV\\sdk\\native\\3rdparty\\libs\\arm64-v8a\\liblibjpeg-turbo.a",
+        "C:\\Users\\niharika3.sharma\\Documents\\Paddle-Lite-Demo-master\\PaddleLite-android-demo\\mask_detection_demo\\app\\OpenCV\\sdk\\native\\3rdparty\\libs\\arm64-v8a\\liblibwebp.a",
+        "C:\\Users\\niharika3.sharma\\Documents\\Paddle-Lite-Demo-master\\PaddleLite-android-demo\\mask_detection_demo\\app\\OpenCV\\sdk\\native\\3rdparty\\libs\\arm64-v8a\\liblibpng.a",
+        "C:\\Users\\niharika3.sharma\\Documents\\Paddle-Lite-Demo-master\\PaddleLite-android-demo\\mask_detection_demo\\app\\OpenCV\\sdk\\native\\3rdparty\\libs\\arm64-v8a\\liblibtiff.a",
+        "C:\\Users\\niharika3.sharma\\Documents\\Paddle-Lite-Demo-master\\PaddleLite-android-demo\\mask_detection_demo\\app\\OpenCV\\sdk\\native\\3rdparty\\libs\\arm64-v8a\\liblibjasper.a",
+        "C:\\Users\\niharika3.sharma\\Documents\\Paddle-Lite-Demo-master\\PaddleLite-android-demo\\mask_detection_demo\\app\\OpenCV\\sdk\\native\\3rdparty\\libs\\arm64-v8a\\libIlmImf.a",
+        "C:\\Users\\niharika3.sharma\\Documents\\Paddle-Lite-Demo-master\\PaddleLite-android-demo\\mask_detection_demo\\app\\OpenCV\\sdk\\native\\3rdparty\\libs\\arm64-v8a\\libquirc.a",
+        "C:\\Users\\niharika3.sharma\\Documents\\Paddle-Lite-Demo-master\\PaddleLite-android-demo\\mask_detection_demo\\app\\OpenCV\\sdk\\native\\staticlibs\\arm64-v8a\\libopencv_calib3d.a",
+        "C:\\Users\\niharika3.sharma\\Documents\\Paddle-Lite-Demo-master\\PaddleLite-android-demo\\mask_detection_demo\\app\\OpenCV\\sdk\\native\\staticlibs\\arm64-v8a\\libopencv_features2d.a",
+        "C:\\Users\\niharika3.sharma\\Documents\\Paddle-Lite-Demo-master\\PaddleLite-android-demo\\mask_detection_demo\\app\\OpenCV\\sdk\\native\\staticlibs\\arm64-v8a\\libopencv_flann.a",
+        "C:\\Users\\niharika3.sharma\\Documents\\Paddle-Lite-Demo-master\\PaddleLite-android-demo\\mask_detection_demo\\app\\OpenCV\\sdk\\native\\staticlibs\\arm64-v8a\\libopencv_imgproc.a",
+        "C:\\Users\\niharika3.sharma\\Documents\\Paddle-Lite-Demo-master\\PaddleLite-android-demo\\mask_detection_demo\\app\\OpenCV\\sdk\\native\\staticlibs\\arm64-v8a\\libopencv_core.a",
+        "C:\\Users\\niharika3.sharma\\Documents\\Paddle-Lite-Demo-master\\PaddleLite-android-demo\\mask_detection_demo\\app\\OpenCV\\sdk\\native\\3rdparty\\libs\\arm64-v8a\\libtbb.a",
+        "C:\\Users\\niharika3.sharma\\Documents\\Paddle-Lite-Demo-master\\PaddleLite-android-demo\\mask_detection_demo\\app\\OpenCV\\sdk\\native\\3rdparty\\libs\\arm64-v8a\\libcpufeatures.a",
+        "C:\\Users\\niharika3.sharma\\Documents\\Paddle-Lite-Demo-master\\PaddleLite-android-demo\\mask_detection_demo\\app\\OpenCV\\sdk\\native\\3rdparty\\libs\\arm64-v8a\\libittnotify.a",
+        "C:\\Users\\niharika3.sharma\\Documents\\Paddle-Lite-Demo-master\\PaddleLite-android-demo\\mask_detection_demo\\app\\OpenCV\\sdk\\native\\3rdparty\\libs\\arm64-v8a\\libtegra_hal.a"
+      ]
+    }
+  }
+}

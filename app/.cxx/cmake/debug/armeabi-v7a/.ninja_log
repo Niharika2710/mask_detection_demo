@@ -1,0 +1,10 @@
+# ninja log v5
+3	410	0	clean	a1bb2b1c0c806ec9
+3	466	0	clean	a1bb2b1c0c806ec9
+5	803	0	clean	a1bb2b1c0c806ec9
+2	424	0	clean	a1bb2b1c0c806ec9
+3	448	0	clean	a1bb2b1c0c806ec9
+680	5929	614463242	CMakeFiles/Native.dir/Utils.cc.o	a44a1d03889bbf59
+25	6061	614463243	CMakeFiles/Native.dir/Native.cc.o	bc8129f3ee81ae81
+1666	7858	614463244	CMakeFiles/Native.dir/Pipeline.cc.o	94abfc78182f81a0
+7859	15771	614463249	C:/Users/niharika3.sharma/Documents/Paddle-Lite-Demo-master/PaddleLite-android-demo/mask_detection_demo/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libNative.so	b8e3c1be84e1fe6d

@@ -1,0 +1,120 @@
+import java.security.MessageDigest
+
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'base'
+
+android {
+    compileSdkVersion 29
+    defaultConfig {
+        applicationId "com.baidu.paddle.lite.demo.mask_detection"
+        minSdkVersion 16
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        externalNativeBuild {
+            cmake {
+                arguments '-DANDROID_PLATFORM=android-23', '-DANDROID_STL=c++_shared', "-DANDROID_TOOLCHAIN="
+                abiFilters 'armeabi-v7a', 'arm64-v8a'
+                cppFlags "-std=c++11"
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    externalNativeBuild {
+        cmake {
+            path "src/main/cpp/CMakeLists.txt"
+            version "3.10.2"
+        }
+    }
+    ndkVersion '21.0.6113669'
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    //noinspection GradleCompatible
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.google.firebase:firebase-firestore:21.4.3'
+    implementation 'com.google.firebase:firebase-storage:19.1.1'
+    androidTestImplementation "com.android.support:support-annotations:28.0.0"
+    implementation "com.android.support:support-annotations:28.0.0"
+    annotationProcessor 'com.android.support:support-annotations:28.0.0'
+    implementation "androidx.constraintlayout:constraintlayout:2.0.0-beta7"
+
+    //noinspection GradleCompatible
+    implementation 'com.android.support:design:28.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation 'com.android.support:multidex:1.0.3'
+
+}
+
+def archives = [
+        [
+                'src' : 'https://paddlelite-demo.bj.bcebos.com/libs/android/paddle_lite_libs_v2_6_1.tar.gz',
+                'dest': 'PaddleLite'
+        ],
+        [
+                'src' : 'https://paddlelite-demo.bj.bcebos.com/libs/android/opencv-4.2.0-android-sdk.tar.gz',
+                'dest': 'OpenCV'
+        ],
+        [
+                'src' : 'https://paddlelite-demo.bj.bcebos.com/models/pyramidbox_lite_fp32_for_cpu_v2_6_1.tar.gz',
+                'dest': 'src/main/assets/models/pyramidbox_lite_for_cpu'
+        ],
+        [
+                'src' : 'https://paddlelite-demo.bj.bcebos.com/models/mask_detector_fp32_128_128_for_cpu_v2_6_1.tar.gz',
+                'dest': 'src/main/assets/models/mask_detector_for_cpu'
+        ]
+]
+
+task downloadAndExtractArchives(type: DefaultTask) {
+    doFirst {
+        println "Downloading and extracting archives including libs and models"
+    }
+    doLast {
+        // Prepare cache folder for archives
+        String cachePath = "cache"
+        if (!file("${cachePath}").exists()) {
+            mkdir "${cachePath}"
+        }
+        archives.eachWithIndex { archive, index ->
+            MessageDigest messageDigest = MessageDigest.getInstance('MD5')
+            messageDigest.update(archive.src.bytes)
+            String cacheName = new BigInteger(1, messageDigest.digest()).toString(32)
+            // Download the target archive if not exists
+            boolean copyFiles = !file("${archive.dest}").exists()
+            if (!file("${cachePath}/${cacheName}.tar.gz").exists()) {
+                ant.get(src: archive.src, dest: file("${cachePath}/${cacheName}.tar.gz"))
+                copyFiles = true; // force to copy files from the latest archive files
+            }
+            // Extract the target archive if its dest path does not exists
+            if (copyFiles) {
+                copy {
+                    from tarTree("${cachePath}/${cacheName}.tar.gz")
+                    into "${archive.dest}"
+                }
+            }
+        }
+    }
+}
+preBuild.dependsOn downloadAndExtractArchives
+
+android.defaultConfig.externalNativeBuild.cmake {
+    arguments "-DFIREBASE_CPP_SDK_DIR=$gradle.firebase_cpp_sdk_dir"
+}
+
+apply from: "$gradle.firebase_cpp_sdk_dir/Android/firebase_dependencies.gradle"
+firebaseCpp.dependencies {
+    auth
+    firestore
+    storage
+}

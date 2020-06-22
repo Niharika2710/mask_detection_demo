@@ -1,0 +1,52 @@
+ninja: Entering directory `C:\Users\niharika3.sharma\Documents\Paddle-Lite-Demo-master\PaddleLite-android-demo\mask_detection_demo\app\.cxx\cmake\debug\arm64-v8a'
+[1/3] Building CXX object CMakeFiles/Native.dir/Native.cc.o
+FAILED: CMakeFiles/Native.dir/Native.cc.o 
+C:\Users\niharika3.sharma\AppData\Local\Android\Sdk\ndk\21.0.6113669\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --target=aarch64-none-linux-android23 --gcc-toolchain=C:/Users/niharika3.sharma/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/niharika3.sharma/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -DNative_EXPORTS -IC:/Users/niharika3.sharma/Documents/Paddle-Lite-Demo-master/PaddleLite-android-demo/mask_detection_demo/app/src/main/cpp/../../../PaddleLite/cxx/include -isystem C:/Users/niharika3.sharma/Documents/Paddle-Lite-Demo-master/PaddleLite-android-demo/mask_detection_demo/app/OpenCV/sdk/native/jni/include -isystem C:/Users/niharika3.sharma/Downloads/firebase_cpp_sdk/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c++11 -ffast-math -Ofast -Os -DNDEBUG -fno-exceptions -fomit-frame-pointer -fno-asynchronous-unwind-tables -fno-unwind-tables -fvisibility=hidden -fvisibility-inlines-hidden -fdata-sections -ffunction-sections -O0 -fno-limit-debug-info  -fPIC -MD -MT CMakeFiles/Native.dir/Native.cc.o -MF CMakeFiles\Native.dir\Native.cc.o.d -o CMakeFiles/Native.dir/Native.cc.o -c C:/Users/niharika3.sharma/Documents/Paddle-Lite-Demo-master/PaddleLite-android-demo/mask_detection_demo/app/src/main/cpp/Native.cc
+C:/Users/niharika3.sharma/Documents/Paddle-Lite-Demo-master/PaddleLite-android-demo/mask_detection_demo/app/src/main/cpp/Native.cc:47:11: error: must use 'class' tag to refer to type 'Pipeline' in this scope
+      new Pipeline(fdtModelDir, fdtCPUThreadNum, fdtCPUPowerMode, fdtInputScale,
+          ^
+          class 
+C:/Users/niharika3.sharma/Documents/Paddle-Lite-Demo-master/PaddleLite-android-demo/mask_detection_demo/app/src/main/cpp/Pipeline.h:154:16: note: class 'Pipeline' is hidden by a non-type declaration of 'Pipeline' here
+extern "C" int Pipeline(int argc, const char *argv[]) {
+               ^
+C:/Users/niharika3.sharma/Documents/Paddle-Lite-Demo-master/PaddleLite-android-demo/mask_detection_demo/app/src/main/cpp/Native.cc:64:3: error: must use 'class' tag to refer to type 'Pipeline' in this scope
+  Pipeline *pipeline = reinterpret_cast<Pipeline *>(ctx);
+  ^
+  class 
+C:/Users/niharika3.sharma/Documents/Paddle-Lite-Demo-master/PaddleLite-android-demo/mask_detection_demo/app/src/main/cpp/Pipeline.h:154:16: note: class 'Pipeline' is hidden by a non-type declaration of 'Pipeline' here
+extern "C" int Pipeline(int argc, const char *argv[]) {
+               ^
+C:/Users/niharika3.sharma/Documents/Paddle-Lite-Demo-master/PaddleLite-android-demo/mask_detection_demo/app/src/main/cpp/Native.cc:64:41: error: must use 'class' tag to refer to type 'Pipeline' in this scope
+  Pipeline *pipeline = reinterpret_cast<Pipeline *>(ctx);
+                                        ^
+                                        class 
+C:/Users/niharika3.sharma/Documents/Paddle-Lite-Demo-master/PaddleLite-android-demo/mask_detection_demo/app/src/main/cpp/Pipeline.h:154:16: note: class 'Pipeline' is hidden by a non-type declaration of 'Pipeline' here
+extern "C" int Pipeline(int argc, const char *argv[]) {
+               ^
+C:/Users/niharika3.sharma/Documents/Paddle-Lite-Demo-master/PaddleLite-android-demo/mask_detection_demo/app/src/main/cpp/Native.cc:82:3: error: must use 'class' tag to refer to type 'Pipeline' in this scope
+  Pipeline *pipeline = reinterpret_cast<Pipeline *>(ctx);
+  ^
+  class 
+C:/Users/niharika3.sharma/Documents/Paddle-Lite-Demo-master/PaddleLite-android-demo/mask_detection_demo/app/src/main/cpp/Pipeline.h:154:16: note: class 'Pipeline' is hidden by a non-type declaration of 'Pipeline' here
+extern "C" int Pipeline(int argc, const char *argv[]) {
+               ^
+C:/Users/niharika3.sharma/Documents/Paddle-Lite-Demo-master/PaddleLite-android-demo/mask_detection_demo/app/src/main/cpp/Native.cc:82:41: error: must use 'class' tag to refer to type 'Pipeline' in this scope
+  Pipeline *pipeline = reinterpret_cast<Pipeline *>(ctx);
+                                        ^
+                                        class 
+C:/Users/niharika3.sharma/Documents/Paddle-Lite-Demo-master/PaddleLite-android-demo/mask_detection_demo/app/src/main/cpp/Pipeline.h:154:16: note: class 'Pipeline' is hidden by a non-type declaration of 'Pipeline' here
+extern "C" int Pipeline(int argc, const char *argv[]) {
+               ^
+5 errors generated.
+[2/3] Building CXX object CMakeFiles/Native.dir/Pipeline.cc.o
+FAILED: CMakeFiles/Native.dir/Pipeline.cc.o 
+C:\Users\niharika3.sharma\AppData\Local\Android\Sdk\ndk\21.0.6113669\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --target=aarch64-none-linux-android23 --gcc-toolchain=C:/Users/niharika3.sharma/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/niharika3.sharma/AppData/Local/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -DNative_EXPORTS -IC:/Users/niharika3.sharma/Documents/Paddle-Lite-Demo-master/PaddleLite-android-demo/mask_detection_demo/app/src/main/cpp/../../../PaddleLite/cxx/include -isystem C:/Users/niharika3.sharma/Documents/Paddle-Lite-Demo-master/PaddleLite-android-demo/mask_detection_demo/app/OpenCV/sdk/native/jni/include -isystem C:/Users/niharika3.sharma/Downloads/firebase_cpp_sdk/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c++11 -ffast-math -Ofast -Os -DNDEBUG -fno-exceptions -fomit-frame-pointer -fno-asynchronous-unwind-tables -fno-unwind-tables -fvisibility=hidden -fvisibility-inlines-hidden -fdata-sections -ffunction-sections -O0 -fno-limit-debug-info  -fPIC -MD -MT CMakeFiles/Native.dir/Pipeline.cc.o -MF CMakeFiles\Native.dir\Pipeline.cc.o.d -o CMakeFiles/Native.dir/Pipeline.cc.o -c C:/Users/niharika3.sharma/Documents/Paddle-Lite-Demo-master/PaddleLite-android-demo/mask_detection_demo/app/src/main/cpp/Pipeline.cc
+In file included from C:/Users/niharika3.sharma/Documents/Paddle-Lite-Demo-master/PaddleLite-android-demo/mask_detection_demo/app/src/main/cpp/Pipeline.cc:21:
+C:/Users/niharika3.sharma/Documents/Paddle-Lite-Demo-master/PaddleLite-android-demo/mask_detection_demo/app/src/main/cpp/main.h:53:20: error: redefinition of 'GetCurrentTimeInMicroseconds'
+    static int64_t GetCurrentTimeInMicroseconds() {
+                   ^
+C:/Users/niharika3.sharma/Documents/Paddle-Lite-Demo-master/PaddleLite-android-demo/mask_detection_demo/app/src/main/cpp/main.h:53:20: note: previous definition is here
+    static int64_t GetCurrentTimeInMicroseconds() {
+                   ^
+1 error generated.
+ninja: build stopped: subcommand failed.

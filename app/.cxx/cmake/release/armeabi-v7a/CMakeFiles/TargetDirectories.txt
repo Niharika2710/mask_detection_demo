@@ -1,0 +1,5 @@
+C:/Users/niharika3.sharma/Documents/Paddle-Lite-Demo-master/PaddleLite-android-demo/mask_detection_demo/app/.cxx/cmake/release/armeabi-v7a/CMakeFiles/Native.dir
+C:/Users/niharika3.sharma/Documents/Paddle-Lite-Demo-master/PaddleLite-android-demo/mask_detection_demo/app/.cxx/cmake/release/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/Users/niharika3.sharma/Documents/Paddle-Lite-Demo-master/PaddleLite-android-demo/mask_detection_demo/app/.cxx/cmake/release/armeabi-v7a/CMakeFiles/rebuild_cache.dir
+C:/Users/niharika3.sharma/Documents/Paddle-Lite-Demo-master/PaddleLite-android-demo/mask_detection_demo/app/.cxx/cmake/release/armeabi-v7a/bin/CMakeFiles/edit_cache.dir
+C:/Users/niharika3.sharma/Documents/Paddle-Lite-Demo-master/PaddleLite-android-demo/mask_detection_demo/app/.cxx/cmake/release/armeabi-v7a/bin/CMakeFiles/rebuild_cache.dir
