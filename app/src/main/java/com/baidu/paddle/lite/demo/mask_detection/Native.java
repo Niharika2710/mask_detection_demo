@@ -74,5 +74,5 @@ public class Native {
 
     public static native boolean nativeProcess(long ctx, int inTextureId, int outTextureId, int textureWidth, int textureHeight, String savedImagePath);
 
-    public static native boolean firestoreReferenceData();
+   // public static native void visitorDetails(long ctx, Object img ,String savedText);
 }

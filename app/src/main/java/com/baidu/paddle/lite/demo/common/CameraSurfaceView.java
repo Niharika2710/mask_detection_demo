@@ -10,33 +10,23 @@ import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
 import android.opengl.GLSurfaceView.Renderer;
 import android.opengl.Matrix;
-import android.os.Handler;
-import android.os.HandlerThread;
-import android.os.Looper;
 import android.util.AttributeSet;
 import android.util.Log;
-import android.hardware.Camera.PictureCallback;
-import android.hardware.Camera.ShutterCallback;
 import android.view.SurfaceHolder;
-import android.view.SurfaceView;
+
 
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
-import java.io.BufferedInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 import java.util.List;
-import java.util.Timer;
 
-import static java.text.BreakIterator.DONE;
 
 public class CameraSurfaceView extends GLSurfaceView implements Renderer,
-        SurfaceTexture.OnFrameAvailableListener, Runnable {
+        SurfaceTexture.OnFrameAvailableListener {
     private static final String TAG = CameraSurfaceView.class.getSimpleName();
 
     public static final int EXPECTED_PREVIEW_WIDTH = 1280;
@@ -107,11 +97,6 @@ public class CameraSurfaceView extends GLSurfaceView implements Renderer,
     private int vcTex2Screen;
     private int tcTex2Screen;
 
-    private Handler backgroundHandler;
-    private HandlerThread backgroundThread;
-    private BufferedInputStream mMonitor;
-    private Looper mLooper;
-    private Timer timer;
 
     public interface OnTextureChangedListener {
         public boolean onTextureChanged(int inTextureId, int outTextureId, int textureWidth, int textureHeight);
@@ -281,7 +266,7 @@ public class CameraSurfaceView extends GLSurfaceView implements Renderer,
         }
     }
 
-    public void openCamera() throws Exception {
+    public void openCamera() {
         if (disableCamera) return;
 
         camera = Camera.open(selectedCameraId);
@@ -346,49 +331,7 @@ public class CameraSurfaceView extends GLSurfaceView implements Renderer,
         }
     }
 
-    ShutterCallback shutterCallback = new ShutterCallback() {
-        public void onShutter() {
-            Log.d("CameraSurfaceView", "onShutter'd");
-        }
-    };
-
-    // Handles data for raw picture
-
-    PictureCallback rawCallback = new PictureCallback() {
-        public void onPictureTaken(byte[] data, Camera camera) {
-            Log.d("CameraSurfaceView", "onPictureTaken - raw");
-        }
-    };
-
-    //Handles data for jpeg picture
-
-    PictureCallback jpegCallback = new PictureCallback() {
-        public void onPictureTaken(byte[] data, Camera camera) {
-            FileOutputStream outStream = null;
-            try {
-                // write to local sandbox file system
-                // outStream =
-                // CameraDemo.this.openFileOutput(String.format("%d.jpg",
-                // System.currentTimeMillis()), 0);
-                // Or write to sdcard
-                outStream = new FileOutputStream(String.format("/sdcard/%d.jpg", System.currentTimeMillis()));
-                outStream.write(data);
-                outStream.close();
-                Log.d("CameraSurfaceView", "onPictureTaken - wrote bytes: " + data.length);
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } finally {
-            }
-            Log.d("CameraSurfaceView", "onPictureTaken - jpeg");
-        }
-    };
-
-
-    @Override
-    public void run() {
-        camera.takePicture(shutterCallback, rawCallback, jpegCallback);
+    static {
+        System.loadLibrary("Native");
     }
-
 }

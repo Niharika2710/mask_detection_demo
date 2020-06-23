@@ -49,7 +49,7 @@ namespace app_framework {
 int64_t WinGetCurrentTimeInMicroseconds();
 #endif
 
-// Returns the number of microseconds since the epoch.
+/*// Returns the number of microseconds since the epoch.
     static int64_t GetCurrentTimeInMicroseconds() {
 #if !defined(_WIN32)
         struct timeval now;
@@ -58,7 +58,7 @@ int64_t WinGetCurrentTimeInMicroseconds();
 #else
         return WinGetCurrentTimeInMicroseconds();
 #endif
-    }
+    }*/
 
 // WindowContext represents the handle to the parent window.  It's type
 // (and usage) vary based on the OS.

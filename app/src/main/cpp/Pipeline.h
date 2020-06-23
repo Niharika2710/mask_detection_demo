@@ -107,6 +107,10 @@ public:
     bool Process(int inTextureId, int outTextureId, int textureWidth,
                  int textureHeight, std::string savedImagePath);
 
+    static cv::String sendDataToJava(cv::Mat mat, std::string basicString, int64_t time);
+
+    static void getVisitorDetails();
+
 private:
     // Read pixels from FBO texture to CV image
     void CreateRGBAImageFromGLFBOTexture(int textureWidth, int textureHeight,
@@ -146,13 +150,10 @@ private:
     std::shared_ptr<FaceDetector> faceDetector_;
     std::shared_ptr<MaskClassifier> maskClassifier_;
 
-    void uploadFileToFirestore(cv::Mat mat, std::string basicString, int64_t time);
-
-
 };
 
 
-extern "C" int FirebaseData(int argc, const char *argv[]);
+
 
 
 

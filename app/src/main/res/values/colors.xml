@@ -7,4 +7,18 @@
     <color name="colorTopBar">#00000000</color>
     <color name="colorBottomBar">#00000000</color>
     <color name="colorText">#FFFFFFFF</color>
+
+    <color name="colorPrimary1">#ed4b2b</color>
+    <color name="colorPrimaryDark1">#812ce4</color>
+    <color name="colorAccent1">#cb2f8f</color>
+
+    <color name="textColor">@android:color/white</color>
+
+    <color name="top1">@color/colorPrimary</color>
+    <color name="top2">@color/colorAccent</color>
+    <color name="top3">@color/colorPrimaryDark</color>
+
+    <color name="nlpPrimaryColor">#812ce5</color>
+    <color name="grey_300">#E0E0E0</color>
+    <color name="color_white">#fefefe</color>
 </resources>

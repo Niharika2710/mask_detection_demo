@@ -14,4 +14,21 @@
     <dimen name="large_font_size">32dp</dimen>
     <dimen name="medium_font_size">24dp</dimen>
     <dimen name="small_font_size">16dp</dimen>
+
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="image_classification_result_row_margin">16dp</dimen>
+    <dimen name="image_classification_result_row_padding">8dp</dimen>
+    <dimen name="button_height">72dp</dimen>
+    <dimen name="result_row_progress_bar_padding">8dp</dimen>
+    <dimen name="result_row_progress_bar_height_top1">12dp</dimen>
+    <dimen name="result_row_progress_bar_height_top2plus">8dp</dimen>
+    <dimen name="toolbar_top_margin">24dp</dimen>
+    <dimen name="list_title_margin_top">16dp</dimen>
+    <dimen name="list_content_margin">32dp</dimen>
+    <dimen name="round_corners_radius">4dp</dimen>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
 </resources>

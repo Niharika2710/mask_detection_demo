@@ -18,7 +18,6 @@
 #include "firebase/auth.h"
 #include "firebase/util.h"
 #include "firebase/log.h"
-#include "main.h"
 #include "Native.h"
 
 firebase::App *app;
@@ -37,48 +36,6 @@ FaceDetector::FaceDetector(const std::string &modelDir, const int cpuThreadNum,
     predictor_ =
             paddle::lite_api::CreatePaddlePredictor<paddle::lite_api::MobileConfig>(
                     config);
-}
-
-FirebaseData::FirebaseData(int argc, const char *argv[]) {
-
-    ::firebase::App *app;
-    using app_framework::LogMessage;
-
-#if defined(__ANDROID__)
-    app = ::firebase::App::Create(app_framework::GetJniEnv(),
-                                  app_framework::GetActivity());
-#else
-    app = ::firebase::App::Create();
-#endif  // defined(__ANDROID__)
-    __android_log_print(ANDROID_LOG_INFO, "Firebase storage", "%s", "Initialization done!!");
-
-    ::firebase::storage::Storage *storage = firebase::storage::Storage::GetInstance(app);
-
-    // Points to the root reference
-    firebase::storage::StorageReference storage_ref = storage->GetReferenceFromUrl(
-            "gs://covidsafe-279814.appspot.com");
-
-    // Points to "images"
-    firebase::storage::StorageReference images_ref = storage_ref.Child("images");
-
-    __android_log_print(ANDROID_LOG_INFO, "Firebase storage details", "%s",
-                        storage_ref.name().c_str());
-
-    // Points to "images/space.jpg"
-    // Note that you can use variables to create child values
-    std::string filename = "space.jpg";
-    firebase::storage::StorageReference space_ref = images_ref.Child(filename);
-
-    // File path is "images/space.jpg"
-    std::string path = space_ref.full_path();
-
-    // File name is "space.jpg"
-    std::string name = space_ref.name();
-
-    // Points to "images"
-    images_ref = space_ref.GetParent();
-
-    return 0;
 }
 
 void FaceDetector::Preprocess(const cv::Mat &rgbaImage) {
@@ -298,9 +255,8 @@ void Pipeline::VisualizeResults(const std::vector<Face> &faces,
 
         //Firebase reference
         //send image, text, timestamp to Firebase reference
+        sendDataToJava(*rgbaImage, text, GetCurrentTime());
 
-        uploadFileToFirestore(*rgbaImage, text, GetCurrentTime());
-        
         cv::rectangle(
                 *rgbaImage,
                 cv::Point2d(faces[i].roi.x,
@@ -402,13 +358,9 @@ bool Pipeline::Process(int inTexureId, int outTextureId, int textureWidth,
     return true;
 }
 
-
-void Pipeline::uploadFileToFirestore(cv::Mat mat, std::string basicString, int64_t time) {
-
+cv::String Pipeline::sendDataToJava(cv::Mat mat, std::string basicString, int64_t time) {
+    return basicString;
 }
-
-}
-
 
 
 

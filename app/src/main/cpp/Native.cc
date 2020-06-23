@@ -14,6 +14,8 @@
 
 #include "Native.h"
 #include "Pipeline.h"
+#include <string.h>
+#include <jni.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -26,28 +28,28 @@ extern "C" {
  */
 JNIEXPORT jlong JNICALL
 Java_com_baidu_paddle_lite_demo_mask_1detection_Native_nativeInit(
-    JNIEnv *env, jclass thiz, jstring jfdtModelDir, jint fdtCPUThreadNum,
-    jstring jfdtCPUPowerMode, jfloat fdtInputScale, jfloatArray jfdtInputMean,
-    jfloatArray jfdtInputStd, jfloat fdtScoreThreshold, jstring jmclModelDir,
-    jint mclCPUThreadNum, jstring jmclCPUPowerMode, jint mclInputWidth,
-    jint mclInputHeight, jfloatArray jmclInputMean, jfloatArray jmclInputStd) {
-  std::string fdtModelDir = jstring_to_cpp_string(env, jfdtModelDir);
-  std::string fdtCPUPowerMode = jstring_to_cpp_string(env, jfdtCPUPowerMode);
-  std::vector<float> fdtInputMean =
-      jfloatarray_to_float_vector(env, jfdtInputMean);
-  std::vector<float> fdtInputStd =
-      jfloatarray_to_float_vector(env, jfdtInputStd);
-  std::string mclModelDir = jstring_to_cpp_string(env, jmclModelDir);
-  std::string mclCPUPowerMode = jstring_to_cpp_string(env, jmclCPUPowerMode);
-  std::vector<float> mclInputMean =
-      jfloatarray_to_float_vector(env, jmclInputMean);
-  std::vector<float> mclInputStd =
-      jfloatarray_to_float_vector(env, jmclInputStd);
-  return reinterpret_cast<jlong>(
-      new Pipeline(fdtModelDir, fdtCPUThreadNum, fdtCPUPowerMode, fdtInputScale,
-                   fdtInputMean, fdtInputStd, fdtScoreThreshold, mclModelDir,
-                   mclCPUThreadNum, mclCPUPowerMode, mclInputWidth,
-                   mclInputHeight, mclInputMean, mclInputStd));
+        JNIEnv *env, jclass thiz, jstring jfdtModelDir, jint fdtCPUThreadNum,
+        jstring jfdtCPUPowerMode, jfloat fdtInputScale, jfloatArray jfdtInputMean,
+        jfloatArray jfdtInputStd, jfloat fdtScoreThreshold, jstring jmclModelDir,
+        jint mclCPUThreadNum, jstring jmclCPUPowerMode, jint mclInputWidth,
+        jint mclInputHeight, jfloatArray jmclInputMean, jfloatArray jmclInputStd) {
+    std::string fdtModelDir = jstring_to_cpp_string(env, jfdtModelDir);
+    std::string fdtCPUPowerMode = jstring_to_cpp_string(env, jfdtCPUPowerMode);
+    std::vector<float> fdtInputMean =
+            jfloatarray_to_float_vector(env, jfdtInputMean);
+    std::vector<float> fdtInputStd =
+            jfloatarray_to_float_vector(env, jfdtInputStd);
+    std::string mclModelDir = jstring_to_cpp_string(env, jmclModelDir);
+    std::string mclCPUPowerMode = jstring_to_cpp_string(env, jmclCPUPowerMode);
+    std::vector<float> mclInputMean =
+            jfloatarray_to_float_vector(env, jmclInputMean);
+    std::vector<float> mclInputStd =
+            jfloatarray_to_float_vector(env, jmclInputStd);
+    return reinterpret_cast<jlong>(
+            new Pipeline(fdtModelDir, fdtCPUThreadNum, fdtCPUPowerMode, fdtInputScale,
+                         fdtInputMean, fdtInputStd, fdtScoreThreshold, mclModelDir,
+                         mclCPUThreadNum, mclCPUPowerMode, mclInputWidth,
+                         mclInputHeight, mclInputMean, mclInputStd));
 }
 
 /*
@@ -57,13 +59,13 @@ Java_com_baidu_paddle_lite_demo_mask_1detection_Native_nativeInit(
  */
 JNIEXPORT jboolean JNICALL
 Java_com_baidu_paddle_lite_demo_mask_1detection_Native_nativeRelease(
-    JNIEnv *env, jclass thiz, jlong ctx) {
-  if (ctx == 0) {
-    return JNI_FALSE;
-  }
-  Pipeline *pipeline = reinterpret_cast<Pipeline *>(ctx);
-  delete pipeline;
-  return JNI_TRUE;
+        JNIEnv *env, jclass thiz, jlong ctx) {
+    if (ctx == 0) {
+        return JNI_FALSE;
+    }
+    Pipeline *pipeline = reinterpret_cast<Pipeline *>(ctx);
+    delete pipeline;
+    return JNI_TRUE;
 }
 
 /*
@@ -73,17 +75,49 @@ Java_com_baidu_paddle_lite_demo_mask_1detection_Native_nativeRelease(
  */
 JNIEXPORT jboolean JNICALL
 Java_com_baidu_paddle_lite_demo_mask_1detection_Native_nativeProcess(
-    JNIEnv *env, jclass thiz, jlong ctx, jint inTextureId, jint outTextureId,
-    jint textureWidth, jint textureHeight, jstring jsavedImagePath) {
-  if (ctx == 0) {
-    return JNI_FALSE;
-  }
-  std::string savedImagePath = jstring_to_cpp_string(env, jsavedImagePath);
-  Pipeline *pipeline = reinterpret_cast<Pipeline *>(ctx);
-  return pipeline->Process(inTextureId, outTextureId, textureWidth,
-                           textureHeight, savedImagePath);
+        JNIEnv *env, jclass thiz, jlong ctx, jint inTextureId, jint outTextureId,
+        jint textureWidth, jint textureHeight, jstring jsavedImagePath) {
+    if (ctx == 0) {
+        return JNI_FALSE;
+    }
+    std::string savedImagePath = jstring_to_cpp_string(env, jsavedImagePath);
+    Pipeline *pipeline = reinterpret_cast<Pipeline *>(ctx);
+    return pipeline->Process(inTextureId, outTextureId, textureWidth,
+                             textureHeight, savedImagePath);
 }
 
+/*
+JNIEXPORT void JNICALL
+Java_com_baidu_paddle_lite_demo_mask_1detection_Native_visitorDetails(
+        JNIEnv *env, jclass thiz, jlong ctx, jobject mat, jstring text) {
+
+    std::string savedText = jstring_to_cpp_string(env, text);
+    Pipeline *pipeline = reinterpret_cast<Pipeline *>(ctx);
+    return pipeline->sendDataToJava(reinterpret_cast<const cv::Mat &>(mat), savedText,
+                                    GetCurrentTime());
+}
+*/
+
+
+/*JNIEXPORT jstring JNICALL
+Java_com_baidu_paddle_lite_demo_mask_1detection_DetectorMainActivity_stringFromJNI(JNIEnv *env,
+                                                                                   jobject thiz) {
+    // TODO: implement stringFromJNI()
+    std::string hello = "Hello from JNI";
+    return env->NewStringUTF(hello.c_str());
+}
+extern "C"
+JNIEXPORT jstring JNICALL
+Java_com_baidu_paddle_lite_demo_mask_1detection_DetectorMainActivity_stringFromModel(JNIEnv *env, jobject thiz, jobject image, jstring text) {
+
+    // TODO: implement stringFromModel()
+
+ *//*   Pipeline *pipeline = reinterpret_cast<Pipeline *>(0);
+    return pipeline->sendDataToJava(reinterpret_cast<const cv::Mat &>(image),
+            jstring_to_cpp_string(env, text).c_str(),
+            GetCurrentTime());*//*
+}
+*/
 #ifdef __cplusplus
 }
 #endif
