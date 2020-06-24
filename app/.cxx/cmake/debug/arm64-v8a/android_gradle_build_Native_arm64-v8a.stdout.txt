@@ -1,2 +1,3 @@
 ninja: Entering directory `C:\Users\niharika3.sharma\Documents\Paddle-Lite-Demo-master\PaddleLite-android-demo\mask_detection_demo\app\.cxx\cmake\debug\arm64-v8a'
-ninja: no work to do.
+[1/2] Building CXX object CMakeFiles/Native.dir/Pipeline.cc.o
+[2/2] Linking CXX shared library C:\Users\niharika3.sharma\Documents\Paddle-Lite-Demo-master\PaddleLite-android-demo\mask_detection_demo\app\build\intermediates\cmake\debug\obj\arm64-v8a\libNative.so
