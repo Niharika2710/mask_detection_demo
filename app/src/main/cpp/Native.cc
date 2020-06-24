@@ -105,19 +105,27 @@ Java_com_baidu_paddle_lite_demo_mask_1detection_DetectorMainActivity_stringFromJ
     // TODO: implement stringFromJNI()
     std::string hello = "Hello from JNI";
     return env->NewStringUTF(hello.c_str());
-}
-extern "C"
+}*/
+/*extern "C"
 JNIEXPORT jstring JNICALL
 Java_com_baidu_paddle_lite_demo_mask_1detection_DetectorMainActivity_stringFromModel(JNIEnv *env, jobject thiz, jobject image, jstring text) {
 
     // TODO: implement stringFromModel()
 
- *//*   Pipeline *pipeline = reinterpret_cast<Pipeline *>(0);
+    Pipeline *pipeline = reinterpret_cast<Pipeline *>(0);
     return pipeline->sendDataToJava(reinterpret_cast<const cv::Mat &>(image),
             jstring_to_cpp_string(env, text).c_str(),
-            GetCurrentTime());*//*
+            GetCurrentTime());
+}*/
+
+extern "C"
+JNIEXPORT jstring JNICALL
+Java_com_baidu_paddle_lite_demo_mask_1detection_DetectorMainActivity_stringFromJNI(JNIEnv *env,
+                                                                                   jobject thiz) {
+    // TODO: implement stringFromJNI()
+    std::string hello = "Hello from JNI";
+    return env->NewStringUTF(hello.c_str());
 }
-*/
 #ifdef __cplusplus
 }
 #endif

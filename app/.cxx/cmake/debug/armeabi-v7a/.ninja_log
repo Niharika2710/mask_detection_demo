@@ -14,3 +14,8 @@
 76	6158	614600758	CMakeFiles/Native.dir/Native.cc.o	bc8129f3ee81ae81
 2044	8099	614600760	CMakeFiles/Native.dir/Pipeline.cc.o	94abfc78182f81a0
 8099	16088	614600764	C:/Users/niharika3.sharma/Documents/Paddle-Lite-Demo-master/PaddleLite-android-demo/mask_detection_demo/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libNative.so	b8e3c1be84e1fe6d
+4	652	0	clean	a1bb2b1c0c806ec9
+222	7651	614703254	CMakeFiles/Native.dir/Utils.cc.o	a44a1d03889bbf59
+1460	14601	614703261	CMakeFiles/Native.dir/Pipeline.cc.o	94abfc78182f81a0
+2379	14798	614703261	CMakeFiles/Native.dir/Native.cc.o	bc8129f3ee81ae81
+14798	38989	614703270	C:/Users/niharika3.sharma/Documents/Paddle-Lite-Demo-master/PaddleLite-android-demo/mask_detection_demo/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libNative.so	b8e3c1be84e1fe6d

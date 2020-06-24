@@ -1,7 +1,5 @@
 # ninja log v5
-1935	8521	614622311	CMakeFiles/Native.dir/Utils.cc.o	15975f9f0828720c
-46	8542	614622311	CMakeFiles/Native.dir/Pipeline.cc.o	1053bc70657c879a
-1283	8821	614622311	CMakeFiles/Native.dir/Native.cc.o	af2cac3f36dfc544
-8821	20033	614622318	C:/Users/niharika3.sharma/Documents/Paddle-Lite-Demo-master/PaddleLite-android-demo/mask_detection_demo/app/build/intermediates/cmake/debug/obj/arm64-v8a/libNative.so	1c944e0752b13abd
-84	4104	614623762	CMakeFiles/Native.dir/Native.cc.o	af2cac3f36dfc544
-4104	12154	614623766	C:/Users/niharika3.sharma/Documents/Paddle-Lite-Demo-master/PaddleLite-android-demo/mask_detection_demo/app/build/intermediates/cmake/debug/obj/arm64-v8a/libNative.so	1c944e0752b13abd
+91	10562	614712211	CMakeFiles/Native.dir/Utils.cc.o	15975f9f0828720c
+2441	15662	614712216	CMakeFiles/Native.dir/Pipeline.cc.o	1053bc70657c879a
+4773	17214	614712217	CMakeFiles/Native.dir/Native.cc.o	af2cac3f36dfc544
+17214	37442	614712229	C:/Users/niharika3.sharma/Documents/Paddle-Lite-Demo-master/PaddleLite-android-demo/mask_detection_demo/app/build/intermediates/cmake/debug/obj/arm64-v8a/libNative.so	1c944e0752b13abd

@@ -4,6 +4,16 @@ public class CovidSafeDetectorModel {
     private String user_no;
     private String timestamp;
     private String image_url;
+    private String maskOnOrNot;
+
+
+    public String getMaskOnOrNot() {
+        return maskOnOrNot;
+    }
+
+    public void setMaskOnOrNot(String maskOnOrNot) {
+        this.maskOnOrNot = maskOnOrNot;
+    }
 
     public String getTimestamp() {
         return timestamp;
@@ -24,10 +34,11 @@ public class CovidSafeDetectorModel {
     public CovidSafeDetectorModel() {
     }
 
-    public CovidSafeDetectorModel(String user_no, String image_url, String timestamp) {
+    public CovidSafeDetectorModel(String user_no, String image_url, String timestamp, String maskOnOrNot) {
         this.user_no = user_no;
         this.image_url = image_url;
         this.timestamp = timestamp;
+        this.maskOnOrNot = maskOnOrNot;
     }
 
     public String getUser_no() {

@@ -339,6 +339,9 @@ bool Pipeline::Process(int inTexureId, int outTextureId, int textureWidth,
                                  &mclPredictTime, &mclPostprocessTime);
         // Stage3: Visualize results
         VisualizeResults(faces, &rgbaImage);
+
+        //set timer for 5 secs, grab the face and save it to the local directory
+
     }
 
     // Visualize the status(performace data) to origin image
@@ -361,7 +364,4 @@ bool Pipeline::Process(int inTexureId, int outTextureId, int textureWidth,
 cv::String Pipeline::sendDataToJava(cv::Mat mat, std::string basicString, int64_t time) {
     return basicString;
 }
-
-
-
 

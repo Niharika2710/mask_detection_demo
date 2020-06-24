@@ -35,6 +35,7 @@
             android:label="Settings" />
 
         <activity android:name="DetectorActivity" />
+        <activity android:name="AnalyticsActivity" />
 
     </application>
 </manifest>

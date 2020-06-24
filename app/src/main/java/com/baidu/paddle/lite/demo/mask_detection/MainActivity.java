@@ -13,10 +13,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        findViewById(R.id.main_vision_click_view).setOnClickListener(new View.OnClickListener() {
+       /* findViewById(R.id.main_vision_click_view).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, DetectorMainActivity.class));
+            }
+        });*/
+
+        findViewById(R.id.main_vision_click_view).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, DetectorActivity.class
+                ));
             }
         });
         findViewById(R.id.main_nlp_click_view).setOnClickListener(new View.OnClickListener() {

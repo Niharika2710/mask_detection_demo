@@ -41,8 +41,8 @@ public class DetectorMainActivity extends Activity implements View.OnClickListen
     private String text;
     private String time;
 
-   /* public native String stringFromJNI();
-    public native String stringFromModel(Object image, String text);*/
+    public native String stringFromJNI();
+    // public native String stringFromModel(Object image, String text);*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,8 +66,8 @@ public class DetectorMainActivity extends Activity implements View.OnClickListen
             requestAllPermissions();
         }
 
-     /*   Log.i("DetectorMainActivity", stringFromJNI());
-        Log.i("DetectorMainActivity", stringFromModel(image, text));*/
+        Log.i("DetectorMainActivity", stringFromJNI());
+        //Log.i("DetectorMainActivity", stringFromModel(image, text));*/
     }
 
     @Override
@@ -214,7 +214,7 @@ public class DetectorMainActivity extends Activity implements View.OnClickListen
                 && ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED;
     }
 
-   /* static {
+    static {
         System.loadLibrary("Native");
-    }*/
+    }
 }

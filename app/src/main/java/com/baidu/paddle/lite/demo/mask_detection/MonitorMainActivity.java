@@ -1,9 +1,11 @@
 package com.baidu.paddle.lite.demo.mask_detection;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -13,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.baidu.paddle.lite.demo.common.CircleTransform;
 import com.baidu.paddle.lite.demo.common.CovidSafeDetectorModel;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
@@ -25,6 +28,9 @@ public class MonitorMainActivity extends AppCompatActivity {
     private FirebaseFirestore firebaseFirestore;
     private RecyclerView mFirestoreList;
     private FirestoreRecyclerAdapter firestoreRecyclerAdapter;
+    private ImageButton analyticsBtn;
+    private TextView textViolatorsNo;
+    private ImageView warningImage;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -33,6 +39,10 @@ public class MonitorMainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_monitor_main);
 
         firebaseFirestore = FirebaseFirestore.getInstance();
+
+        analyticsBtn = findViewById(R.id.analyticsButton);
+        textViolatorsNo = findViewById(R.id.violators_no_text);
+        warningImage = findViewById(R.id.warningImage);
         mFirestoreList = findViewById(R.id.my_recycler_view);
 
         //Query
@@ -56,12 +66,19 @@ public class MonitorMainActivity extends AppCompatActivity {
             protected void onBindViewHolder(@NonNull MonitorMainActivity.CovidSafeDetectorViewHolder holder, int position, @NonNull CovidSafeDetectorModel model) {
                 holder.user_no.setText(model.getUser_no());
                 holder.time.setText(model.getTimestamp());
-                Picasso.get().load(model.getImage_url()).into(holder.imageview);
+                Picasso.get().load(model.getImage_url()).transform(new CircleTransform()).into(holder.imageview);
             }
         };
         mFirestoreList.setHasFixedSize(true);
         mFirestoreList.setLayoutManager(new LinearLayoutManager(this));
         mFirestoreList.setAdapter(firestoreRecyclerAdapter);
+
+        analyticsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MonitorMainActivity.this, AnalyticsActivity.class));
+            }
+        });
     }
 
     private class CovidSafeDetectorViewHolder extends RecyclerView.ViewHolder {

@@ -4,8 +4,8 @@
     <string name="app_name">CovidSafe</string>
     <string name="action_settings">Settings</string>
     <string name="welcome_skip_button">Skip</string>
-    <string name="main_vision_button">DETECTOR APP</string>
-    <string name="main_nlp_button">MONITOR APP</string>
+    <string name="main_vision_button">DETECTOR </string>
+    <string name="main_nlp_button">MONITOR </string>
 
     <!-- Face detector -->
     <string name="FDT_CHOOSE_PRE_INSTALLED_MODEL_KEY">FDT_CHOOSE_INSTALLED_MODEL_KEY</string>
