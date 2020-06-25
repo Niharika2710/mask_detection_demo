@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.Environment;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.*;
@@ -18,6 +19,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import com.baidu.paddle.lite.demo.common.CameraSurfaceView;
+import com.baidu.paddle.lite.demo.common.Constants;
 import com.baidu.paddle.lite.demo.common.Utils;
 
 import java.io.File;
@@ -68,6 +70,19 @@ public class DetectorMainActivity extends Activity implements View.OnClickListen
 
         Log.i("DetectorMainActivity", stringFromJNI());
         //Log.i("DetectorMainActivity", stringFromModel(image, text));*/
+
+        //create folder for Image Storage
+        File folder = new File(Constants.faceImagePath);
+        boolean success = true;
+        if (!folder.exists()) {
+            success = folder.mkdirs();
+            Log.i("DetectorMainActivity", "Folder created!");
+        }
+        if (success) {
+            // Do something on success
+        } else {
+            // Do something else on failure
+        }
     }
 
     @Override

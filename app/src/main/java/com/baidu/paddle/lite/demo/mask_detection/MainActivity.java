@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-       /* findViewById(R.id.main_vision_click_view).setOnClickListener(new View.OnClickListener() {
+/*        findViewById(R.id.main_vision_click_view).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, DetectorActivity.class

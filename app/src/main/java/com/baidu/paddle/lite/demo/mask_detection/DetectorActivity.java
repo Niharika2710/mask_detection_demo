@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -14,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.baidu.paddle.lite.demo.common.Constants;
 import com.baidu.paddle.lite.demo.common.CovidSafeDetectorModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -26,6 +28,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import java.io.File;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -59,6 +62,8 @@ public class DetectorActivity extends AppCompatActivity {
         // Initializing firestore object
         db = FirebaseFirestore.getInstance();
 
+       /* File file = new File(Constants.faceImagePath);
+        Log.i("DetectorActivty", String.valueOf(Uri.fromFile(file)));*/
       /*  long ctx = 0;
         String savedText = "";
         Object img = new Object();
@@ -159,16 +164,17 @@ public class DetectorActivity extends AppCompatActivity {
         docData.put("image_url", downloadUrl);
         docData.put("maskOnOrNot", covidSafeDetectorModel.getMaskOnOrNot());
 
+        //ArrayList<CovidSafeDetectorModel> arrayList = new ArrayList<>();
         final ArrayList<Map<String, Object>> list = new ArrayList<>();
 
-    /*    db.collection("mask_detection")
+/*
+        db.collection("mask_detection")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         for (QueryDocumentSnapshot documentSnapshot : task.getResult()) {
                             if (documentSnapshot.getId().equals("2020-06-01")) {
-                                list.add(documentSnapshot.getData());
 
                             }
                         }
