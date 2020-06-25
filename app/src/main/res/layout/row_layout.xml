@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView xmlns:card_view="https://schemas.android.com/apk/res-auto"
@@ -35,8 +35,9 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:id="@+id/linearText"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:layout_marginStart="4dp"
                 android:layout_marginLeft="8dp"
@@ -66,18 +67,46 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textSize="15sp" />
 
-                <ImageView
-                    android:id="@+id/warningImage"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:src="@drawable/warning_image"
-                    android:layout_gravity="right|bottom"
-                    android:layout_marginEnd="5dp" />
+                <!--        <ImageView
+                            android:id="@+id/warningImage"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:src="@drawable/warning_image"
+                            android:layout_gravity="right|bottom"
+                            android:layout_marginEnd="5dp" />-->
 
 
             </LinearLayout>
+
+            <ImageView
+                android:id="@+id/face_with_mask"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_toEndOf="@id/linearText"
+                android:layout_toRightOf="@id/linearText"
+                android:padding="4dp"
+                android:visibility="visible"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/iconfinder_wearing_mask_5932150" />
+
+
+            <ImageView
+                android:id="@+id/face_with_no_mask"
+                android:layout_width="60dp"
+                android:layout_height="70dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginEnd="3dp"
+                android:layout_toEndOf="@id/linearText"
+                android:layout_toRightOf="@id/linearText"
+                android:padding="4dp"
+                android:visibility="visible"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/iconfinder_no_face_masks" />
+
         </RelativeLayout>
 
     </androidx.cardview.widget.CardView>

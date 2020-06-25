@@ -4,12 +4,9 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,15 +19,13 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.SetOptions;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-import java.io.File;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -40,8 +35,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-
-import id.zelory.compressor.Compressor;
 
 public class DetectorActivity extends AppCompatActivity {
 
@@ -149,36 +142,39 @@ public class DetectorActivity extends AppCompatActivity {
 
         DateFormat df = new SimpleDateFormat("EEE, d MMM yyyy, HH:mm");
         String date = df.format(Calendar.getInstance().getTime());
-        String currentDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
+        final String currentDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
 
         //  String docKey = "Visitor" + Integer.toString(Constants.visitor_no + 1);
 
-        CovidSafeDetectorModel covidSafeDetectorModel =
+        final CovidSafeDetectorModel covidSafeDetectorModel =
                 new CovidSafeDetectorModel("Visitor"
-                        //+ Integer.toString(Constants.visitor_no + 1)
                         ,
                         downloadUrl,
                         date,
                         "0");
 
-        Map<String, Object> docData = new HashMap<>();
-        docData.put("user_no", "Visitor");
+        final Map<String, Object> docData = new HashMap<>();
+        docData.put("user_no", covidSafeDetectorModel.getUser_no());
         docData.put("timestamp", date);
         docData.put("image_url", downloadUrl);
-        docData.put("maskOnOrNot", "1");
+        docData.put("maskOnOrNot", covidSafeDetectorModel.getMaskOnOrNot());
 
+        final ArrayList<Map<String, Object>> list = new ArrayList<>();
 
-        //Setting reference to collection in Firestore
-        DocumentReference documentReference = db.collection("Mask Detection").document(currentDate);
+    /*    db.collection("mask_detection")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        for (QueryDocumentSnapshot documentSnapshot : task.getResult()) {
+                            if (documentSnapshot.getId().equals("2020-06-01")) {
+                                list.add(documentSnapshot.getData());
 
-       /* if (currentDate.equals(documentReference.getId())) {
-            documentReference.update(docData);
+                            }
+                        }
+                    }
+                });
+*/
 
-        } else {*/
-        //set new doc
-
-        db.collection("Mask Detection").add(covidSafeDetectorModel);
-//        }
-//
     }
 }
